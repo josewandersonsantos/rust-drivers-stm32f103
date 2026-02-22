@@ -115,11 +115,11 @@ pub fn start( usart: Usart, mode: UsartMode, use_it:UsartInterrupt, baud_rate: U
 
     unsafe
     {
-        // Zera os registradores antes de configurar
+        // clean registers
         utils::write_register(cr1, 0);
         utils::write_register(cr2, 0);
 
-        // Configura word length e parity (CR1)
+        // setup word length and parity (CR1)
         let mut cr1_val = match word_length
         {
             // M = 0
@@ -137,7 +137,7 @@ pub fn start( usart: Usart, mode: UsartMode, use_it:UsartInterrupt, baud_rate: U
             UsartParity::Odd  => (1 << 10) | (1 << 9),
         };
 
-        // Modo TX/RX
+        // Mode TX/RX
         cr1_val |= match mode
         {
             UsartMode::Tx   => 1 << 3, // TE
@@ -145,12 +145,12 @@ pub fn start( usart: Usart, mode: UsartMode, use_it:UsartInterrupt, baud_rate: U
             UsartMode::TxRx => (1 << 3) | (1 << 2),
         };
 
-        // Habilita USART (UE = 1)
+        // Enable USART (UE = 1)
         cr1_val |= 1 << 13;
 
         utils::write_register(cr1, cr1_val);
 
-        // Configura stop bits (CR2)
+        // Setup stop bits (CR2)
         let cr2_val = match stop_bits
         {
             UsartStopBits::Stop1Bit => 0b00 << 12,
@@ -159,7 +159,7 @@ pub fn start( usart: Usart, mode: UsartMode, use_it:UsartInterrupt, baud_rate: U
 
         utils::write_register(cr2, cr2_val);
 
-        // Configura baud rate (BRR)
+        // Setup baud rate (BRR)
         let brr_val = calculate_brr(baud_rate, mcu::CLOCK_FREQUENCY);
         utils::write_register(brr, brr_val);
     }
