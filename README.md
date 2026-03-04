@@ -35,8 +35,10 @@ This project focuses on simplicity, control, and transparency, making it ideal f
 ```
 src/
 ├── gpio.rs
-├── rcc.rs
 ├── i2c.rs
+├── irq.rs
+├── mcu.rs
+├── rcc.rs
 ├── usart.rs
 ├── utils.rs
 └── main.rs / lib.rs
@@ -55,7 +57,7 @@ src/
 rustup target add thumbv7m-none-eabi
 ```
 
-* Probe tool (example):
+* Probe tool:
 
 ```
 cargo install probe-rs-tools
@@ -143,9 +145,15 @@ This is a low-level implementation. It assumes:
 
 ## 🚧 Roadmap
 
+* [X] RCC driver
+* [X] GPIO driver
+* [X] I2C driver
+* [X] USART driver
 * [ ] SPI driver
+* [ ] USB driver
 * [ ] Timer (PWM / delays)
-* [ ] Interrupt support
+* [X] Interrupt support
+* [ ] WWDG
 * [ ] DMA
 * [ ] Better error handling
 * [ ] Optional safe abstractions layer
