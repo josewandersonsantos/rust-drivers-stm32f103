@@ -1,0 +1,6 @@
+[package]
+name = "stm32f103xx_drivers"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
