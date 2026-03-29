@@ -108,12 +108,17 @@ This library intentionally avoids using high-level HALs (like `stm32f1xx-hal`) i
 
 ```rust
 // Example (pseudo-code)
-rcc::init();
-gpio::init_output(GPIOA, PIN5);
 
-loop {
-    gpio::toggle(GPIOA, PIN5);
-    delay_ms(500);
+// RCC (GPIOC)
+rcc::apb2::enable(rcc::apb2::Apb2Peripheral::IoPc);    
+// PC13 (LED)
+gpio::configure_pin(mcu::GPIOC_BASE, mcu::GPIO13, gpio::GpioMode::Output, gpio::GpioConfig::PushPull, Some(gpio::GpioSpeed::Speed2MHz));
+loop
+{
+    // Toggle LED on PC13
+    led::led_toggle(mcu::GPIOC_BASE, mcu::GPIO13);
+    // Delay 1s
+    utils::delay_ms(1000);
 }
 ```
 
