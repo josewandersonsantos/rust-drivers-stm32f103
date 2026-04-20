@@ -11,11 +11,12 @@ This project focuses on simplicity, control, and transparency, making it ideal f
 * `no_std` compatible (bare-metal support)
 * Direct register-level access (no heavy abstractions)
 * Modular peripheral drivers:
-
   * GPIO
   * RCC (clock configuration)
   * I2C
   * USART
+  * ...
+
 * Minimal dependencies
 * Designed for STM32F103 (Cortex-M3)
 
@@ -150,6 +151,7 @@ This is a low-level implementation. It assumes:
 * [X] I2C driver
 * [X] USART driver
 * [ ] SPI driver
+* [ ] CRC driver
 * [ ] USB driver
 * [ ] Timer (PWM / delays)
 * [X] Interrupt support
