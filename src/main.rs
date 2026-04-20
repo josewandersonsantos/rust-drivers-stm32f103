@@ -9,8 +9,11 @@ mod startup_stm32f103;
 mod utils;
 mod mcu;
 mod rcc;
+mod irq;
 mod gpio;
 mod led;
+mod i2c;
+mod usart;
 /*
  * PANIC HANDLER
  */
