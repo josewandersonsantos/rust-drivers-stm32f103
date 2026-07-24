@@ -5,7 +5,7 @@
 ![Platform](https://img.shields.io/badge/platform-STM32F103-03234B?logo=stmicroelectronics)
 ![Architecture](https://img.shields.io/badge/architecture-ARM_Cortex--M3-0091BD?logo=arm)
 ![Environment](https://img.shields.io/badge/environment-no__std-success)
-![License](https://img.shields.io/github/license/josewandersonsantos/sensory-fusion)
+![License](https://img.shields.io/github/license/josewandersonsantos/rust-drivers-stm32f103)
 
 A lightweight, `no_std` embedded Rust library for the **STM32F103 (Blue Pill)**, providing low-level drivers for core peripherals such as GPIO, RCC, I2C, USART, and more.
 
@@ -181,7 +181,7 @@ Contributions are welcome! Feel free to:
 
 ## 📄 License
 
-MIT or Apache 2.0 (to be defined)
+Apache 2.0
 
 ---
 
