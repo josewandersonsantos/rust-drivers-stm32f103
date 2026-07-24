@@ -1,7 +1,5 @@
 # STM32F103 Rust Drivers
 
----
-
 ![Status](https://img.shields.io/badge/status-in%20progress-yellow)
 ![Language](https://img.shields.io/badge/language-Rust-orange?logo=rust)
 ![Platform](https://img.shields.io/badge/platform-STM32F103-03234B?logo=stmicroelectronics)
